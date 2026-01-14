@@ -66,4 +66,17 @@ def decrypt_file(s1, s2):
     for line in enc_file:
         new_line = ""
         for ch in line:
-            new_line += decrypt_letter(ch,
+            new_line += decrypt_letter(ch, s1, s2)
+        dec_file.write(new_line)
+
+    enc_file.close()
+    dec_file.close()
+
+
+def main():
+    s1 = int(input("Enter s1: "))
+    s2 = int(input("Enter s2: "))
+    encrypt_file(s1, s2)
+    decrypt_file(s1, s2)
+
+main()
